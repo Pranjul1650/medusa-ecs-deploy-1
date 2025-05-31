@@ -1,0 +1,21 @@
+{
+  "family": "medusa-task",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "medusa",
+      "image": "pranjul1/medusa-backend:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 9000,
+          "hostPort": 9000
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::768997459949:role/ecsTaskExecutionRole"
+}
